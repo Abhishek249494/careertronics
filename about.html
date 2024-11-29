@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About US</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      background-color: #121212;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+
+    @keyframes oneByOneLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes oneByOneRight {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+
+    .custom-cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #ff4500, #000000);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      mix-blend-mode: normal;
+      box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+      transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        opacity 0.3s ease;
+      display: none;
+      /* Initially hidden */
+    }
+
+    .custom-cursor::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+
+    .custom-cursor.hover {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #000000, #ff4500, #8B0000);
+      transform: translate(-50%, -50%) rotate(45deg);
+      opacity: 0.3;
+      /* Makes it more transparent */
+    }
+
+    .custom-cursor.click {
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, #ff4500, #000000);
+      animation: pulse 0.5s infinite alternate;
+      opacity: 1;
+      /* Even more transparent when clicking */
+    }
+
+    @keyframes pulse {
+      from {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      to {
+        transform: translate(-50%, -50%) scale(1.2);
+      }
+    }
+
+
+
+
+
+
+
+    .color {
+      color: rgb(204, 178, 178) !important;
+    }
+
+    .logo img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-left: 20px;
+    }
+
+    .nav-link {
+      color: white;
+    }
+
+    .nav-item {
+      color: white;
+    }
+
+    #page1 {
+      animation: oneByOneRight 1.2s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0 cover 50%;
+      width: 81%;
+      max-width: 1419px;
+      height: auto;
+      border: 1px solid black;
+      margin: 50px 0px;
+      border-radius: 30px;
+      background-image: linear-gradient(rgb(50, 44, 44), rgb(0, 0, 0));
+    }
+
+    .line1 {
+      border-left: 6px solid rgb(245, 13, 13);
+      height: 70px;
+      margin: 21px;
+    }
+
+    @media screen and (max-width: 600px) {
+      #page1 {
+        width: 95%;
+      }
+    }
+
+    @media screen and (max-width: 440px) {
+      .line1 p {
+        line-height: 19px;
+      }
+    }
+
+    @media screen and (max-width: 368px) {
+      .line1 p {
+        font-size: 11.5px;
+      }
+    }
+
+    /* vatsalya code  */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Gilroy", sans-serif;
+    }
+
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+    }
+
+    #page2 {
+      margin-bottom: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    #page2div2 {
+      padding: 0 125px;
+    }
+
+    body {
+      background-color: #121212;
+    }
+
+    #ourMission {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 30px;
+    }
+
+    #ourMissionText {
+      margin-bottom: 23px;
+    }
+
+    #ourMissionImage {
+      padding: 20px 0;
+    }
+
+    #mainTextPage2 {
+      color: #ff0000;
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+    #textPage2 {
+      color: white;
+      font-weight: 300;
+      font-size: 25px;
+      text-align: left;
+      padding: 0 10px;
+      line-height: 30.26px;
+      font-weight: lighter;
+    }
+
+    #page3 {
+      padding: 0 100px;
+    }
+
+    #page3div2 {
+      height: 100px;
+      border: 1px solid #d9d9d9;
+      border-radius: 30px;
+      padding: 70px 15px 41px 15px;
+      height: auto;
+    }
+
+    #page3image1,
+    #page3image2,
+    #page3image3 {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      transition: all 0.2s ease;
+
+      opacity: 0.3;
+      transform: scale(0.8) translateY(50px);
+      transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    #page3image2 {
+      height: auto;
+      width: 100%;
+    }
+
+    #page3image1.active,
+    #page3image2.active,
+    #page3image3.active {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    #page3left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #page3Content {
+      font-weight: lighter;
+      font-size: 22.1px;
+      line-height: 30.31px;
+      align-content: left;
+      color: white;
+      text-align: left;
+    }
+
+    #Why,
+    #Careertronics {
+      font-weight: 600;
+      font-size: 30px;
+    }
+
+    #Why {
+      color: white;
+      font-weight: 400;
+    }
+
+    #Careertronics {
+      color: #ff0000;
+    }
+
+    #page3h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    #page3 {
+      margin-bottom: 130px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 1199px) {
+      #page3image2 {
+        width: 520px;
+        height: auto;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      #page2div2 {
+        padding: 8px;
+      }
+    }
+
+    @media screen and (max-width: 695px) {
+      #page3 {
+        padding: 0 77px;
+      }
+    }
+
+    @media screen and (max-width: 676px) {
+      #page3 {
+        padding: 0 67px;
+      }
+
+      #page3Content {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    @media screen and (max-width: 617px) {
+      #page3 {
+        padding: 0 37px;
+      }
+    }
+
+    @media screen and (max-width: 462px) {
+      #page3 {
+        padding: 0 17px;
+        /* Changed from 37px to 17px */
+      }
+    }
+
+    @media screen and (max-width: 416px) {
+      #page3h1 {
+        line-height: 19px;
+        font-size: 4px;
+        padding-top: 10px;
+      }
+
+      #page3div2 {
+        padding: 15px 0;
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      #textPage2 {
+        text-align: center;
+      }
+    }
+
+    #flexforpage1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+    }
+
+    #aboutText {
+      color: white;
+      margin: 21px;
+      margin-bottom: 41px;
+      font-size: 22px;
+      font-weight: 300;
+      line-height: 33px;
+    }
+
+    @media screen and (max-width: 781px) {
+      #aboutText {
+        line-height: 27px;
+        font-size: 17px;
+      }
+    }
+
+    @media screen and (max-width: 426px) {
+      #aboutText {
+        line-height: 23px;
+        font-size: 14px;
+      }
+    }
+
+    .logon img {
+      margin-right: 20px;
+    }
+
+    #buttonOutline {
+      border-color: #ff0000;
+      color: #ff0000;
+    }
+
+    #buttonOutline:hover {
+      background-color: #ff0000;
+
+      color: white;
+    }
+
+    .page3 {
+      animation: oneByOneLeft 1.2s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0 cover 50%;
+    }
+
+    .page4 {
+      animation: oneByOneRight 1.2s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0 cover 50%;
+    }
+
+    .page5 {
+      animation: oneByOneLeft 1.2s ease-out forwards;
+      animation-timeline: view();
+      animation-range: entry 0 cover 50%;
+    }
+
+    .vats-div-1 {
+
+      display: flex;
+      align-items: center;
+      padding: 40px 40px 40px 40px;
+      flex-direction: column;
+      justify-content: flex-center;
+
+    }
+
+    .vats-div-big {
+
+      height: 100px;
+      border: 1px solid #d9d9d9;
+      border-radius: 30px;
+      padding: 70px 15px 41px 15px;
+      height: auto;
+    }
+
+    @media screen and (max-width: 1199px) {
+      .vats-div-big {
+        padding: 21px 15px 41px 15px;
+      }
+    }
+
+    /* tryyy */
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <!-- Navbar starts -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-black">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="index.html">
+          <img id="logonnn" src="logonnn.jpg" alt="logo" style="height: 100px; width: 100px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+            <li class="nav-item ">
+              <a class="nav-link active hover-effect-hai" style="color:aliceblue ;" aria-current="page"
+                href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  hover-effect-hai" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link  hover-effect-hai" href="#">Job Search</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link hover-effect-hai" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          </li>
+
+          </ul>
+          <button id="SignInButton" class="btn btn-outline-light">
+            Register / Sign in
+          </button>
+        </div>
+      </div>
+    </nav>
+    <style>
+      .navbar {
+        min-height: 100px;
+      }
+
+      #SignInButton {
+        border-color: #ff0000dd;
+        color: #ff4444;
+        transition: ease-in-out 0.42s;
+        margin-right: 7px;
+      }
+
+      #SignInButton:hover {
+        background-color: #ff0000dd;
+        color: aliceblue;
+      }
+
+      .navbar-toggler-icon {
+        filter: invert(1);
+      }
+
+      .nav-item>a {
+        margin: 0 20px;
+        color: aliceblue;
+      }
+
+      .hover-effect-hai {
+        transition: transform 0.3s ease-out, color 0.3s, text-shadow 0.3s ease-out;
+
+      }
+
+      .hover-effect-hai:hover {
+        transform: scale(1.02);
+        color: white;
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.8) !important;
+      }
+
+      #logonnn {
+        border-radius: 50%;
+        object-fit: contain;
+        width: 69px;
+        margin-left: 7px;
+        transition: transform 0.25s ease-out, box-shadow 0.3s ease-out;
+      }
+
+      #logonnn:hover {
+        box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.9);
+      }
+
+      #missionnnimage {
+        border-radius: 50%;
+      }
+
+      .hover-effect-hai-vats {
+        transition: transform 0.3s ease-out, color 0.3s, text-shadow 0.3s ease-out;
+      }
+
+      .hover-effect-hai-vats:hover {
+        transform: scale(1.1);
+        color: white;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
+      }
+    </style>
+
+
+
+    <!-- NAV BAR ENDS  -->
+
+
+    <div id="flexforpage1">
+      <div id="page1">
+        <div class="line1">
+          <h5 class="" style="color: white">&nbsp;About</h5>
+          <h2 class="" style="color: red">
+            <span>&nbsp;</span>Careertronics
+          </h2>
+        </div>
+        <p id="aboutText">
+          At Careertronic Global Services Pvt. Ltd. (CGSPL), we are driven by a singular purpose: to empower businesses
+          and individuals to thrive in a fast-changing, interconnected world. Founded with a vision to provide
+          innovative, high-quality services, we have become a global leader in Software Development, IT Training,
+          Industrial Automation Training, Corporate & Industrial Training, Global Education, and Business Consulting.
+        </p>
+        <p id="aboutText">
+          Our mission is to enable sustainable growth and long-term success for clients through tailored solutions.
+          Whether it's driving digital transformation, enhancing professional skills, or exploring global education, we
+          are committed to guiding you every step of the way.
+        </p>
+        <p id="aboutText">
+          With a focus on excellence, we help individuals advance their careers and organizations optimize performance,
+          ensuring they stay competitive in an increasingly complex market.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- page 2 starts -->
+  <div id="page2" class="text-center">
+    <div class="row container" id="page2div2">
+      <div id="ourMission" class="col-xl-4">
+        <div id="ourMissionImage">
+          <img id="missionnnimage" class="hover-effect-hai-vats" src="mission.svg" />
+        </div>
+        <div id="ourMissionText">
+          <h1 id="mainTextPage2">OUR MISSION</h1>
+        </div>
+        <div>
+          <p id="textPage2">
+            At Careertronic Global Services Pvt. Ltd. (CGSPL), we empower businesses and individuals through advanced
+            technology, tailored training, and global education. Our mission is to deliver innovative solutions, drive
+            sustainable growth, and build lasting partnerships for success in a digital world.
+          </p>
+        </div>
+      </div>
+      <div id="ourMission" class="col-xl-4">
+        <div id="ourMissionImage">
+          <img id="missionnnimage" class="hover-effect-hai-vats" style="width: 100px;" src="visionn.jpg" />
+        </div>
+        <div id="ourMissionText">
+          <h1 id="mainTextPage2">OUR VISION</h1>
+        </div>
+        <div>
+          <p id="textPage2">
+            At Careertronic Global Services Pvt. Ltd. (CGSPL), we aim to be a global leader in IT solutions, training,
+            and education, delivering innovative services that empower individuals and organizations. Our vision is to
+            drive digital transformation, career growth, and success by equipping clients with the tools and knowledge
+            to thrive in a dynamic world.
+          </p>
+        </div>
+      </div>
+      <div id="ourMission" class="col-xl-4">
+        <div id="ourMissionImage">
+          <img id="missionnnimage" class="hover-effect-hai-vats" src="values.svg" />
+        </div>
+        <div id="ourMissionText">
+          <h1 id="mainTextPage2">OUR VALUES</h1>
+        </div>
+        <div>
+          <p id="textPage2">
+            At Careertronic Global Services Pvt. Ltd. (CGSPL), our core values define our commitment to excellence and
+            success for clients and partners:
+          <ul>
+            <li id="textPage2">
+              <strong>Striving for Innovation</strong>
+            </li>
+            <li id="textPage2">
+              <strong>Pursuing Excellence</strong>
+            </li>
+            <li id="textPage2">
+              <strong>Customer-Centricity</strong>
+            </li>
+            <li id="textPage2">
+              <strong>Upholding Integrity</strong>
+            </li>
+            <li id="textPage2">
+              <strong>Promoting Collaboration</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- page 3 starts -->
+  <div id="page3" class="page3 text-center">
+    <div id="page3div2" class="container-sm row">
+      <div id="page3left" class="col-xl-7">
+        <div id="page3Heading">
+          <h1 id="page3h1">
+            <span id="Why">What we</span>
+            <span id="Careertronics">Do</span>
+            <span id="Why">?</span>
+          </h1>
+        </div>
+        <div id="page3Content">
+          <ul>
+            <li><strong>Software Development:</strong>
+              Customized solutions to optimize operations, enhance efficiency, and support business growth with scalable
+              and reliable software.
+            </li>
+            <li><strong>IT Training:</strong>
+              Comprehensive programs to upskill professionals in cutting-edge technologies, equipping them for a dynamic
+              IT landscape.
+            </li>
+            <li><strong>Industrial Automation:</strong>
+              Specialized training to improve manufacturing and robotics efficiency while reducing downtime.
+            </li>
+            <li><strong>Corporate Training:</strong>
+              Tailored solutions to enhance employee skills, leadership, and technical expertise, driving team success.
+            </li>
+            <li><strong>Global Education:</strong>
+              Guidance for students seeking international study and career opportunities with top global institutions.
+            </li>
+            <li><strong>Business Consulting:</strong>
+              Expert advice to overcome challenges, optimize operations, and implement growth strategies for success.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="page3right1" class="col-xl-5">
+        <img id="page3image1" src="page3img.svg" />
+      </div>
+    </div>
+  </div>
+  <!-- page 4 starts -->
+  <div id="page3" class="page4 text-center">
+    <div class="container-sm row vats-div-big">
+      <div id="page3right2" class="vats-div-1 col-xl-5">
+        <img id="page3image2" src="page4imggg.png" />
+      </div>
+      <div id="page3left" class="col-xl-7">
+        <div id="page3Heading">
+          <h1 id="page3h1">
+            <span id="Why">Why Should You</span>
+            <span id="Careertronics">Choose Us</span>
+            <span id="Why">?</span>
+          </h1>
+        </div>
+        <div id="page3Content">
+          <ul>
+            <li><strong>Global Reach:</strong>
+              Delivering tailored solutions to global markets with a strong international presence and extensive
+              network.
+            </li>
+            <li><strong>Expertise:</strong>
+              Skilled professionals in software, automation, IT training, and consulting, providing innovative
+              solutions.
+            </li>
+            <li><strong>Tailored Solutions:</strong>
+              Personalized strategies aligned with unique goals, ensuring impactful outcomes for clients.
+            </li>
+            <li><strong>End-to-End Support:</strong>
+              Comprehensive assistance from start to finish for seamless execution and success.
+            </li>
+            <li><strong>Proven Track Record:</strong>
+              Trusted for quality, reliability, and exceeding expectations across diverse industries.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- page 5 starts -->
+  <div id="page3" class="page5 text-center">
+    <div id="page3div2" class="container-sm row">
+      <div id="page3left" class="col-xl-7">
+        <div id="page3Heading">
+          <h1 id="page3h1">
+            <span id="Why">Our Exceptional</span>
+            <span id="Careertronics">Team</span>
+            <span id="Why">!</span>
+          </h1>
+        </div>
+        <div id="page3Content">
+          <p>
+            At Careertronic Global Services, our greatest asset is our exceptional team of passionate, skilled, and
+            experienced professionals, each dedicated to delivering innovative solutions that drive your success. From
+            software developers and IT trainers to business consultants and global education advisors, we have a diverse
+            group of experts across every area of our service offerings, ensuring that you receive the highest level of
+            expertise, care, and support.
+            Our team thrives on collaboration, constantly sharing insights, ideas, and best practices to create
+            solutions that are customized to your unique needs. We are committed to fostering a culture of continuous
+            learning and growth, staying ahead of industry trends to deliver the most relevant, cutting-edge services to
+            our clients.
+        </div>
+      </div>
+      <div id="page3right3" class="col-xl-5">
+        <img id="page3image3" src="page5img.svg" />
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer Starts here-->
+  <footer class="Footer-Container text-center text-lg-start text-muted">
+
+    <div class="FooterInnerDiv">
+      <div class="container text-center text-md-start">
+        <!-- Row 1: Logo and Heading Section -->
+        <div class="row FooterRow1 align-items-center mb-10">
+          <div
+            class="FooterLogoDiv col-12 col-md-4 text-center text-md-start mb-3 mb-md-0 FooterLogo d-flex justify-content-center">
+            <img id="logonnn" src="logonnn.jpg" alt="Footer Logo" style="height: 100px; width: 100px;">
+          </div>
+          <div class="col-12 col-md-8 text-center text-md-start HeadingDiv">
+            <h5 class="fw-bold mb-4 hover-effect-hai " style="text-shadow: red;">Careertronics</h5>
+            <p class="text-white font-family-poppins hover-effect-hai ">
+              Explore our services today and discover how we can empower your business or career.
+            </p>
+          </div>
+        </div>
+
+        <!-- Row 2: Links Section -->
+        <div class="row FooterRow2 mt-3 d-flex flex-row text-white mb-4">
+          <!-- Column 1 -->
+          <div class="FooterRow2Content1 col-12 col-md-2 col-lg-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Products</h6>
+            <p><small><a href="#!" class="text-reset hover-effect-hai ">MDBootstrap</a></small></p>
+            <p><small><a href="#!" class="text-reset hover-effect-hai">MDWordPress</a></small></p>
+            <p><small><a href="#!" class="text-reset hover-effect-hai">BrandFlow</a></small></p>
+            <p><small><a href="#!" class="text-reset  hover-effect-hai">Bootstrap Angular</a></small></p>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="FooterRow2Content2 col-12 col-md-3 col-lg-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Useful links</h6>
+            <p><small><a href="#!" class="text-reset hover-effect-hai">Your Account</a></small></p>
+            <p><small><a href="#!" class="text-reset hover-effect-hai">Become a Affiliate</a></small></p>
+            <p><small><a href="#!" class="text-reset  hover-effect-hai">Shipping Rates</a></small></p>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="FooterRow2Content3 col-12 col-md-4 col-lg-2 mx-auto  mb-4">
+            <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Support</h6>
+            <p><small><a class="text-decoration-none text-white hover-effect-hai" href="#">Help</a></small></p>
+            <p><small><a class="text-decoration-none text-white  hover-effect-hai" href="#">Customer care</a></small>
+            </p>
+          </div>
+        </div>
+
+
+        <!-- Row 3: Links Section -->
+        <div class="row FooterRow3 mt-3 d-flex flex-row text-white mb-">
+          <!-- Column 1 -->
+          <div class="col-12 col-md-2 col-lg-2 mx-auto mb-4">
+            <h6 class="  mb-4 hover-effect-hai">Contact Details</h6>
+            <small>
+              <p class=" mb-4 hover-effect-hai">Raipur,Chhattisgarh</p>
+            </small>
+          </div>
+
+          <!-- Column 2 -->
+          <div class="LowerHeading col-12 col-md-3 col-lg-2 mx-auto mb-4 d-flex justify-content-center">
+            <small>
+              <p class=" mb-4  hover-effect-hai">Chanakyans Education Foundation</p>
+            </small>
+
+          </div>
+
+          <!-- Column 3 -->
+          <div class="ContactNumber col-md-4 col-lg-3 mx-auto mb-md-0 mb-4 d-flex justify-content-end">
+            <small class="mb-4 hover-effect-hai">Contact Number: +91 9343202785</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Copyright -->
+    <div class="text-center p-3 text-white">
+      <article style=" color: #6b7280; font-size: 0.875rem; text-align: center; @media (min-width: 640px) { text-align: left;
+        }">Copyright © 2024 Careertronic Global Services Pvt. Ltd |
+        All rights reserved</article>
+    </div>
+  </footer>
+
+
+
+
+
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+
+    .FooterInnerDiv {
+      background-image: url("FooterBg.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      /* Top Left Bottom Right */
+      padding: 40px 40px 0px 40px;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .FooterLogoDiv {
+      width: 20%;
+
+    }
+
+    .HeadingDiv {
+      width: 70%;
+
+    }
+
+    .FooterLogo img {
+      width: 7rem;
+      height: auto;
+    }
+
+    .HeadingDiv h5 {
+      font-weight: bold;
+      color: #ff0019;
+    }
+
+    .text-white {
+      color: white !important;
+    }
+
+    .mb-10 {
+      margin-bottom: 7rem;
+      /* Adjust this value as needed */
+    }
+
+    .LowerHeading {
+      width: 20rem;
+    }
+
+    /* Anchor tag styling */
+    /* Base styles for links */
+    .row a {
+      text-decoration: none;
+      /* Removes underline */
+      color: #ffffff;
+      /* Ensures text is white by default */
+      transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+      /* Smooth transition for transform, color, and underline */
+      display: inline-block;
+      /* Allows transformation */
+    }
+
+    /* Hover effect */
+    .row a:hover {
+      /* Changes color to Bootstrap's "danger" red on hover */
+
+      transform: scale(1.05) translateX(5px);
+      /* Scales up and moves slightly to the right */
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .HeadingDiv h5 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .HeadingDiv {
+        width: 100%;
+        padding: 0px;
+      }
+
+      .HeadingDiv p {
+        width: 100%;
+        color: #ff0019;
+      }
+
+      .ContactNumber {
+        display: flex;
+        justify-content: center;
+      }
+
+      .ContactNumber small {
+        width: 100%;
+      }
+
+      .FooterRowContent1 {
+        margin-bottom: 50px;
+        justify-content: center;
+      }
+
+      .FooterRow2Content1 h6 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .FooterRow2Content2 h6 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .FooterRow2Content3 h6 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .FooterRow2Content1 p {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .FooterRow2Content2 p {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .FooterRow2Content3 p {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .FooterRowContent2 {
+        margin-bottom: 50px;
+        justify-content: center;
+      }
+
+      .FooterRowContent3 {
+        margin-bottom: 50px;
+        justify-content: center;
+      }
+
+      .FooterRow1 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .FooterLogo,
+      .HeadingDiv {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+
+
+
+
+  <!-- Footer Ends Here -->
+  <!-- Footer -->
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Select all images
+      const images = [
+        document.getElementById("page3image1"),
+        document.getElementById("page3image2"),
+        document.getElementById("page3image3"),
+      ];
+
+      // Refined Intersection Observer approach
+      const observerOptions = {
+        root: null, // use the viewport
+        rootMargin: "0px",
+        threshold: 0.5, // Trigger when 50% of the element is visible
+      };
+
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          // Only add active class when more than 50% of the image is in view
+          if (entry.intersectionRatio > 0.5) {
+            // Add a slight delay for a more natural reveal
+            setTimeout(() => {
+              entry.target.classList.add("active");
+            }, 200);
+          } else {
+            entry.target.classList.remove("active");
+          }
+        });
+      }, observerOptions);
+
+      // Observe each image
+      images.forEach((image) => {
+        // Ensure initial state
+        image.classList.remove("active");
+        imageObserver.observe(image);
+      });
+    });
+  </script>
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cursor = document.createElement('div');
+      cursor.classList.add('custom-cursor');
+      document.body.appendChild(cursor);
+
+      // Smooth mouse tracking with interpolation
+      let currentX = 0;
+      let currentY = 0;
+      let targetX = currentX;
+      let targetY = currentY;
+
+      // Update cursor position smoothly
+      function updateCursor() {
+        currentX += (targetX - currentX) * 0.2;
+        currentY += (targetY - currentY) * 0.2;
+
+        cursor.style.left = `${currentX}px`;
+        cursor.style.top = `${currentY}px`;
+        requestAnimationFrame(updateCursor);
+      }
+
+      // Event listeners for mouse movement
+      document.addEventListener('mousemove', (e) => {
+        if (cursor.style.display === 'none') {
+          cursor.style.display = 'block'; // Show cursor on first movement
+        }
+        targetX = e.clientX;
+        targetY = e.clientY;
+      });
+
+      // Hide cursor when leaving the window
+      document.addEventListener('mouseout', (e) => {
+        if (e.relatedTarget === null) {
+          cursor.style.display = 'none';
+        }
+      });
+
+      // Show cursor when entering the window
+      document.addEventListener('mouseover', (e) => {
+        if (e.relatedTarget === null) {
+          cursor.style.display = 'block';
+        }
+      });
+
+      // Click effect
+      document.addEventListener('mousedown', () => {
+        cursor.classList.add('click');
+      });
+
+      document.addEventListener('mouseup', () => {
+        cursor.classList.remove('click');
+      });
+
+      // Interactive elements hover effect
+      const interactiveElements = document.querySelectorAll('.interactive, a, button');
+      interactiveElements.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          cursor.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.classList.remove('hover');
+        });
+      });
+
+      // Start the smooth cursor tracking
+      updateCursor();
+    });
+  </script>
+
+
+
+
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Select all images
+      const images = [
+        document.getElementById("page3image1"),
+        document.getElementById("page3image2"),
+        document.getElementById("page3image3"),
+      ];
+
+      // Scroll reveal function
+      function checkScroll() {
+        images.forEach((image) => {
+          // Get image position
+          const rect = image.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+
+          // Check if image is in view
+          if (rect.top >= 0 && rect.bottom <= windowHeight) {
+            image.classList.add("active");
+          } else {
+            image.classList.remove("active");
+          }
+        });
+      }
+
+      // Debounce function to improve performance
+      function debounce(func, delay = 10) {
+        let timeoutId;
+        return function () {
+          const context = this;
+          const args = arguments;
+          clearTimeout(timeoutId);
+          timeoutId = setTimeout(() => {
+            func.apply(context, args);
+          }, delay);
+        };
+      }
+
+      // Add scroll event listener with debounce
+      window.addEventListener("scroll", debounce(checkScroll));
+
+      // Initial check
+      checkScroll();
+    });
+  </script>
+
+</body>
+
+</html>
