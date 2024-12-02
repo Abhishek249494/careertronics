@@ -564,7 +564,7 @@
     <nav class="navbar sticky-top navbar-expand-lg bg-black">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="index.html">
-          <img id="logonnn" src="logonnn.jpg" alt="logo" style="height: 100px; width: 100px;">
+          <img id="logonnn" src="logonnn.jpg" alt="logo" style="height: 80px; width: 80px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -653,12 +653,20 @@
       }
 
       .hover-effect-hai-vats:hover {
-        transform: scale(1.1);
+        transform: scale(1.03);
         color: white;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
       }
+      .hover-effect-hai-vats-no-transform {
+        transition:  color 0.3s, box-shadow 0.3s ease-out
+      }
+
       .hover-effect-hai-vats-red {
         transition: transform 0.3s ease-out, color 0.3s, text-shadow 0.3s ease-out;
+      }
+      .hover-effect-hai-vats-no-transform:hover {
+        color: white;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8) !important;
       }
 
       .hover-effect-hai-vats-red:hover {
@@ -666,30 +674,38 @@
         color: white;
         box-shadow: 0 0 30px red !important;
       }
-      
+
       /* mithun animation starts here  */
 
-/* Hover scale effect */
-.icons:hover {
-  transform: scale(1.1);
-  animation: rotate 0.6s linear; /* Apply rotate animation on hover */
-  filter: brightness(1.2) saturate(1.2); /* Slightly brighten the icon */
-}
+      /* Hover scale effect */
+      .icons:hover {
+        transform: scale(1.1);
+        animation: rotate 0.6s linear;
+        animation-delay: 0.2s;
+        /* Apply rotate animation on hover */
+        filter: brightness(1.2) saturate(1.2);
+        /* Slightly brighten the icon */
+      }
 
-/* Transition for smooth transform effects */
-.icons {
-  transition: transform 0.3s ease; /* Transition for transform */
-}
+      /* Transition for smooth transform effects */
+      .icons {
+        transition: transform 0.7s ease;
+         transition-delay:0.5s
+        /* Transition for transform */
+      }
 
-/* Rotate animation */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg); /* Start at 0 degrees */
-  }
-  to {
-    transform: rotate(360deg); /* Rotate to 360 degrees */
-  }
-}
+      /* Rotate animation */
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+          /* Start at 0 degrees */
+        }
+
+        to {
+          transform: rotate(360deg);
+          /* Rotate to 360 degrees */
+        }
+      }
     </style>
 
 
@@ -699,11 +715,18 @@
 
 
     <style>
-      #contactUsMainText{
+      #main {
+        width: 100%;
+      }
+
+      #contactUsMainText {
         font-weight: 600;
       }
+
       #topsection {
         height: 30vh;
+        max-height: 245px;
+        min-height: 210px;
         display: flex;
         flex-direction: column;
         margin-top: 50px;
@@ -724,9 +747,9 @@
       }
 
       #breadcrumb1 {
-        background-color: rgb(19, 19, 19);
+        background-color: rgba(33, 33, 34,0.75);
         color: #d9d9d9;
- 
+
         height: auto;
         font-family: "Poppins", serif;
         font-weight: 300;
@@ -754,78 +777,179 @@
       #biggdiv {
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 99.5%;
         height: auto;
         margin-bottom: 75px;
+        margin-left: 0;
+        margin-right: 0;
       }
-      #leftistsdiv{
-          height: auto;
+
+      #leftistsdiv {
+        height: auto;
       }
-      #GetinTouch1{
+
+      #GetinTouch1 {
         height: auto;
         display: flex;
         flex-direction: column;
 
       }
-      #leftistsdiv{
-        background-color: red; /* Soft red / / Light red */
+
+      #leftistsdiv {
+        background-color: rgba(255, 88, 76, 1);
+        /* Soft red */
+        /* Light red */
         padding: 30px;
         border-radius: 20px;
-        padding-top:65px ;
+        padding-top: 65px;
+        width: 75%;
+        min-width: 310px;
       }
-      #GetinTouch1 > h1{
-        color:white;
+
+      #GetinTouch1>h1 {
+        color: white;
         font-weight: 500;
 
       }
-      #textwhite{
-        color:white;
-      
+
+      #textwhite {
+        color: white;
+
       }
-      span > h3{
+      .text-white{
+        color:white;
+        
+
+      }
+      .nodecoration{
+        text-decoration: none;
+        cursor: pointer;
+      }
+      #breadcrumb1 > a{
+        transition: 0.5s ease-in-out;
+      }
+      #breadcrumb1 > a:hover{
+          color: rgba(255, 94, 94, 0.853);
+      }
+      span>h3 {
         display: inline-block;
       }
-      .margin-bottom6{
+
+      .margin-bottom6 {
         margin-bottom: 60px;
       }
-      .margin-bottom1{
+
+      .margin-bottom1 {
         margin-bottom: 15px;
       }
-      #flexspan{
+
+      #flexspan {
         display: flex;
         justify-content: flex-start;
         align-items: center;
       }
-      h1,h2,h3,h4,h5,h6{
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         margin-bottom: 0;
       }
-      .margin-right{
+
+      .margin-right {
         margin-right: 25px;
       }
-      .normaltext{
+
+      .normaltext {
         font-weight: 500;
         font-size: 22px;
       }
-      .oursocials{
+
+      .oursocials {
         font-size: larger;
         font-weight: 600;
         margin-top: 13px;
         margin-left: 9px;
       }
-      .socialsClass>i{
+
+      .socialsClass>i {
         margin-right: 20px;
-        transition: 0.5s  ease-in;
+        transition: 0.5s ease-in;
       }
-      .socialsClass>i:hover{
+
+      .socialsClass>i:hover {
         filter: invert(1);
       }
-      #GetinTouch2{
+
+      #GetinTouch2 {
         padding-left: 50px;
         padding-top: 75px;
-        padding-right: 100px;
+        padding-right: 50px;
       }
-      .center-aligned{
-        text-align: center;
+
+      .left-aligned {
+        text-align: left;
+      }
+
+      #mainGreenimg {
+        min-width: 250px;
+        max-width: 100%;
+        /* Ensures image doesn't exceed container width */
+        height: auto;
+        /* Maintains aspect ratio */
+        display: block;
+        /* Removes extra spacing */
+      }
+
+      #bigdiv1 {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+      }
+
+      @media screen and (max-width: 991px) {
+        #GetinTouch2 {
+          display: flex;
+          justify-content: center;
+        }
+
+        #leftistsdiv {
+
+          width: 64%;
+        }
+
+        #bigdiv1 {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+        }
+
+        #div1vatsalya {
+          text-align: center;
+          width: 50%;
+        }
+
+        #imgwaladiv {
+          display: flex;
+          justify-content: center;
+        }
+
+      }
+
+      @media screen and (max-width: 700px) {
+        #bigdiv1 {
+          padding: 65px 30px;
+        }
+      }
+      #topsection{
+        background-image: url('background.png');
+        background-size: cover; 
+        background-position: top; 
+        background-repeat: no-repeat; 
       }
     </style>
 
@@ -835,316 +959,333 @@
         <h1 id="contactUsMainText" class="hover-effect-hai">Contact Us</h1>
       </div>
       <div id="topsectiondiv2">
-        <div class="hover-effect-hai-vats " id="breadcrumb1">
-          <p style="margin:  0 10px 0 0;">Home</p>
+        <div class="hover-effect-hai-vats-no-transform " id="breadcrumb1">
+          <a href="index.html" style="margin:  0 10px 0 0;" class="text-white nodecoration ">Home</a>
           <i style="margin:  0 10px 0 0;" class="fa-solid fa-angles-right"></i>
-          <p style="margin: 0 0 0 0;">Contact Us</p>
+          <a href="contact.html" style="margin: 0 0 0 0;" class="text-white nodecoration ">Contact Us</a>
         </div>
       </div>
     </section>
-    <div id="biggdiv" class="container-sm">
-      <div id = "leftistsdiv" class="hover-effect-hai-vats col-sm-6">
-        <div id="GetinTouch1">
+    <div id="biggdiv" class=" row">
+      <div id="bigdiv1" class="col-lg-6">
+        <div id="leftistsdiv" class="hover-effect-hai-vats ">
+          <div id="GetinTouch1">
 
-          <h1  class="margin-bottom1">
+            <h1 class="margin-bottom1">
+              Get in touch
+            </h1>
+            <article id="textwhite" class="margin-bottom6 ">Fill up the form and our team will get back to you within 24
+              hours</article>
+            <span id="flexspan" class="margin-bottom1"><i id="textwhite"
+                class="margin-right fa-regular fa-2x fa-white fa-envelope"></i>
+              <h3 id="textwhite" class="normaltext">Chat to us</h3>
+            </span>
+
+            <article id="textwhite">Our friendly team is here to help.</article>
+            <article id="textwhite">contact@careertronic.in</article>
+            <hr>
+            <span id="flexspan" class="margin-bottom1"><i id="textwhite"
+                class="margin-right fa-solid fa-2x fa-location-dot"></i>
+              <h3 id="textwhite" class=" normaltext">Office</h3>
+            </span>
+            <article id="textwhite">Come say Hello at our office HQ</article>
+            <article id="textwhite">1st Floor, E-108, Sector 1, Near Axis Juice center, Devendra Nagar, Raipur,
+              Chhattisgarh Pin(492001)</article>
+            <hr>
+            <span id="flexspan" class="margin-bottom1"><i id="textwhite"
+                class="margin-right fa-solid fa-2x fa-phone"></i>
+              <h3 id="textwhite" class="normaltext">Call Us</h3>
+            </span>
+            <article id="textwhite">Mon-Sat from 10am to 7pm</article>
+            <article id="textwhite">+(91) 8602755547</article>
+            <hr>
+            <h3 id="textwhite" class="oursocials margin-bottom1">Our Socials</h3>
+            <span id="flexspan" class=" margin-bottom1 socialsClass">
+              <i id="textwhite" class="icons fa-2x fa-brands fa-facebook"></i>
+              <i id="textwhite" class="icons  fa-2x fa-brands fa-instagram"></i>
+              <i id="textwhite" class="icons fa-2x fa-brands fa-x-twitter"></i>
+              <i id="textwhite" class="icons fa-2x fa-brands fa-youtube"></i></span>
+          </div>
+        </div>
+      </div>
+      <div id="GetinTouch2" class="col-lg-6">
+        <div id="div1vatsalya">
+          <h1 class="text-white margin-bottom1">
             Get in touch
           </h1>
-          <article id="textwhite" class="margin-bottom6 ">Fill up the form and our team will get back to you within 24 hours</article>
-          <span id="flexspan" class="margin-bottom1"><i  id="textwhite" class="margin-right fa-regular fa-2x fa-white fa-envelope"></i><h3 id="textwhite" class= "normaltext">Chat to us</h3> </span>
-
-          <article id="textwhite" >Our friendly team is here to help.</article>
-          <article id="textwhite">contact@careertronic.in</article>
-<hr>
-          <span id="flexspan"  class="margin-bottom1"><i  id="textwhite" class="margin-right fa-solid fa-2x fa-location-dot"></i><h3 id="textwhite" class=" normaltext">Office</h3> </span>
-          <article id="textwhite">Come say Hello at our office HQ</article>
-          <article id="textwhite">1st Floor, E-108, Sector 1, Near Axis Juice center, Devendra Nagar, Raipur, Chhattisgarh Pin(492001)</article>
-          <hr>
-          <span  id="flexspan"  class="margin-bottom1"><i  id="textwhite" class="margin-right fa-solid fa-2x fa-phone"></i><h3 id="textwhite"  class= "normaltext">Call Us</h3> </span>
-          <article  id="textwhite">Mon-Sat from 10am to 7pm</article>
-          <article id="textwhite">+(91) 8602755547</article>
-          <hr>
-          <h3 id="textwhite" class="oursocials margin-bottom1">Our Socials</h3>
-          <span  id="flexspan"  class=" margin-bottom1 socialsClass"> 
-            <i  id="textwhite"  class="icons fa-2x fa-brands fa-facebook"></i>
-            <i  id="textwhite" class="icons  fa-2x fa-brands fa-instagram"></i>
-            <i  id="textwhite" class="icons fa-2x fa-brands fa-twitter"></i>
-            <i  id="textwhite" class="icons fa-2x fa-brands fa-youtube"></i></span>
-         
+          <article id="textwhite" class="margin-bottom6 "> We are here for you! How can we help?</article>
+          <div id="imgwaladiv">
+            <img id="mainGreenimg" class="hover-effect-hai-vats-red" style="border-radius: 20px; margin-bottom: 29px;"
+              src="Contact-removebg-preview.jpg" />
+          </div>
+          <article id="textwhite" class="margin-bottom6 "> Scan this code to start a whatsapp chat with Careertronics
+          </article>
         </div>
       </div>
-      <div id="GetinTouch2" class="col-sm-6">
-        <h1  class="text-white margin-bottom1">
-       Get in touch
-        </h1>
-        <article id="textwhite" class="margin-bottom6 "> We are here for you! How can we help?</article>
-        <img class="hover-effect-hai-vats-red"style="border-radius: 20px; margin-bottom: 29px;" src="Contact-removebg-preview.jpg"/>
-        <article id="textwhite" class="margin-bottom6 center-aligned"> Scan this code to start a whatsapp chat with Careertronics</article>
-      </div>
-
     </div>
-    
 
 
 
 
-    
 
 
-  <!-- Footer Starts here-->
-  <footer class="Footer-Container text-center text-lg-start text-muted">
 
-    <div class="FooterInnerDiv">
-      <div class="container text-center text-md-start">
-        <!-- Row 1: Logo and Heading Section -->
-        <div class="row FooterRow1 align-items-center mb-10">
-          <div
-            class="FooterLogoDiv col-12 col-md-4 text-center text-md-start mb-3 mb-md-0 FooterLogo d-flex justify-content-center">
-            <img id="logonnn" src="logonnn.jpg" alt="Footer Logo" style="height: 100px; width: 100px;">
+
+    <!-- Footer Starts here-->
+    <footer class="Footer-Container text-center text-lg-start text-muted">
+
+      <div class="FooterInnerDiv">
+        <div class="container text-center text-md-start">
+          <!-- Row 1: Logo and Heading Section -->
+          <div class="row FooterRow1 align-items-center mb-10">
+            <div
+              class="FooterLogoDiv col-12 col-md-4 text-center text-md-start mb-3 mb-md-0 FooterLogo d-flex justify-content-center">
+              <img id="logonnn" src="logonnn.jpg" alt="Footer Logo" style="height: 80px; width: 80px;">
+            </div>
+            <div class="col-12 col-md-8 text-center text-md-start HeadingDiv">
+              <h5 class="fw-bold mb-4 hover-effect-hai " style="text-shadow: red;">Careertronics</h5>
+              <p class="text-white font-family-poppins hover-effect-hai ">
+                Explore our services today and discover how we can empower your business or career.
+              </p>
+            </div>
           </div>
-          <div class="col-12 col-md-8 text-center text-md-start HeadingDiv">
-            <h5 class="fw-bold mb-4 hover-effect-hai " style="text-shadow: red;">Careertronics</h5>
-            <p class="text-white font-family-poppins hover-effect-hai ">
-              Explore our services today and discover how we can empower your business or career.
-            </p>
+
+          <!-- Row 2: Links Section -->
+          <div class="row FooterRow2 mt-3 d-flex flex-row text-white mb-4">
+            <!-- Column 1 -->
+            <div class="FooterRow2Content1 col-12 col-md-2 col-lg-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Products</h6>
+              <p><small><a href="#!" class="text-reset hover-effect-hai ">MDBootstrap</a></small></p>
+              <p><small><a href="#!" class="text-reset hover-effect-hai">MDWordPress</a></small></p>
+              <p><small><a href="#!" class="text-reset hover-effect-hai">BrandFlow</a></small></p>
+              <p><small><a href="#!" class="text-reset  hover-effect-hai">Bootstrap Angular</a></small></p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="FooterRow2Content2 col-12 col-md-3 col-lg-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Useful links</h6>
+              <p><small><a href="#!" class="text-reset hover-effect-hai">Your Account</a></small></p>
+              <p><small><a href="#!" class="text-reset hover-effect-hai">Become a Affiliate</a></small></p>
+              <p><small><a href="#!" class="text-reset  hover-effect-hai">Shipping Rates</a></small></p>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="FooterRow2Content3 col-12 col-md-4 col-lg-2 mx-auto  mb-4">
+              <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Support</h6>
+              <p><small><a class="text-decoration-none text-white hover-effect-hai" href="#">Help</a></small></p>
+              <p><small><a class="text-decoration-none text-white  hover-effect-hai" href="#">Customer care</a></small>
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Row 3: Links Section -->
+          <div class="row FooterRow3 mt-3 d-flex flex-row text-white mb-">
+            <!-- Column 1 -->
+            <div class="col-12 col-md-2 col-lg-2 mx-auto mb-4">
+              <h6 class="  mb-4 hover-effect-hai">Contact Details</h6>
+              <small>
+                <p class=" mb-4 hover-effect-hai">Raipur,Chhattisgarh</p>
+              </small>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="LowerHeading col-12 col-md-3 col-lg-2 mx-auto mb-4 d-flex justify-content-center">
+              <small>
+                <p class=" mb-4  hover-effect-hai">Chanakyans Education Foundation</p>
+              </small>
+
+            </div>
+
+            <!-- Column 3 -->
+            <div class="ContactNumber col-md-4 col-lg-3 mx-auto mb-md-0 mb-4 d-flex justify-content-end">
+              <small class="mb-4 hover-effect-hai">Contact Us: +91 9343202785</small>
+            </div>
           </div>
         </div>
 
-        <!-- Row 2: Links Section -->
-        <div class="row FooterRow2 mt-3 d-flex flex-row text-white mb-4">
-          <!-- Column 1 -->
-          <div class="FooterRow2Content1 col-12 col-md-2 col-lg-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Products</h6>
-            <p><small><a href="#!" class="text-reset hover-effect-hai ">MDBootstrap</a></small></p>
-            <p><small><a href="#!" class="text-reset hover-effect-hai">MDWordPress</a></small></p>
-            <p><small><a href="#!" class="text-reset hover-effect-hai">BrandFlow</a></small></p>
-            <p><small><a href="#!" class="text-reset  hover-effect-hai">Bootstrap Angular</a></small></p>
-          </div>
-
-          <!-- Column 2 -->
-          <div class="FooterRow2Content2 col-12 col-md-3 col-lg-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Useful links</h6>
-            <p><small><a href="#!" class="text-reset hover-effect-hai">Your Account</a></small></p>
-            <p><small><a href="#!" class="text-reset hover-effect-hai">Become a Affiliate</a></small></p>
-            <p><small><a href="#!" class="text-reset  hover-effect-hai">Shipping Rates</a></small></p>
-          </div>
-
-          <!-- Column 3 -->
-          <div class="FooterRow2Content3 col-12 col-md-4 col-lg-2 mx-auto  mb-4">
-            <h6 class="text-uppercase fw-bold mb-4 hover-effect-hai">Support</h6>
-            <p><small><a class="text-decoration-none text-white hover-effect-hai" href="#">Help</a></small></p>
-            <p><small><a class="text-decoration-none text-white  hover-effect-hai" href="#">Customer care</a></small>
-            </p>
-          </div>
-        </div>
-
-
-        <!-- Row 3: Links Section -->
-        <div class="row FooterRow3 mt-3 d-flex flex-row text-white mb-">
-          <!-- Column 1 -->
-          <div class="col-12 col-md-2 col-lg-2 mx-auto mb-4">
-            <h6 class="  mb-4 hover-effect-hai">Contact Details</h6>
-            <small>
-              <p class=" mb-4 hover-effect-hai">Raipur,Chhattisgarh</p>
-            </small>
-          </div>
-
-          <!-- Column 2 -->
-          <div class="LowerHeading col-12 col-md-3 col-lg-2 mx-auto mb-4 d-flex justify-content-center">
-            <small>
-              <p class=" mb-4  hover-effect-hai">Chanakyans Education Foundation</p>
-            </small>
-
-          </div>
-
-          <!-- Column 3 -->
-          <div class="ContactNumber col-md-4 col-lg-3 mx-auto mb-md-0 mb-4 d-flex justify-content-end">
-            <small class="mb-4 hover-effect-hai"> +91 9343202785</small>
-          </div>
-        </div>
       </div>
-
-    </div>
-    <!-- Copyright -->
-    <div class="text-center p-3 text-white">
-      <article style=" color: #6b7280; font-size: 0.875rem; text-align: center; @media (min-width: 640px) { text-align: left;
+      <!-- Copyright -->
+      <div class="text-center p-3 text-white">
+        <article style=" color: #6b7280; font-size: 0.875rem; text-align: center; @media (min-width: 640px) { text-align: left;
         }">Copyright © 2024 Careertronic Global Services Pvt. Ltd |
-        All rights reserved</article>
-    </div>
-  </footer>
+          All rights reserved</article>
+      </div>
+    </footer>
 
 
 
 
 
-  <style>
-    * {
-      font-family: 'Poppins', sans-serif;
-    }
+    <style>
+      * {
+        font-family: 'Poppins', sans-serif;
+      }
 
 
 
-    .FooterInnerDiv {
-      background-image: url("FooterBg.png");
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      /* Top Left Bottom Right */
-      padding: 40px 40px 0px 40px;
-    }
+      .FooterInnerDiv {
+        background-image: url("FooterBg.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* Top Left Bottom Right */
+        padding: 40px 40px 0px 40px;
+      }
 
-    .container {
-      width: 100%;
-      height: 100%;
-    }
+      .container {
+        width: 100%;
+        height: 100%;
+      }
 
-    .FooterLogoDiv {
-      width: 20%;
+      .FooterLogoDiv {
+        width: 20%;
 
-    }
-
-    .HeadingDiv {
-      width: 70%;
-
-    }
-
-    .FooterLogo img {
-      width: 7rem;
-      height: auto;
-    }
-
-    .HeadingDiv h5 {
-      font-weight: bold;
-      color: #ff0019;
-    }
-
-    .text-white {
-      color: white !important;
-    }
-
-    .mb-10 {
-      margin-bottom: 7rem;
-      /* Adjust this value as needed */
-    }
-
-    .LowerHeading {
-      width: 20rem;
-    }
-
-    /* Anchor tag styling */
-    /* Base styles for links */
-    .row a {
-      text-decoration: none;
-      /* Removes underline */
-      color: #ffffff;
-      /* Ensures text is white by default */
-      transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
-      /* Smooth transition for transform, color, and underline */
-      display: inline-block;
-      /* Allows transformation */
-    }
-
-    /* Hover effect */
-    .row a:hover {
-      /* Changes color to Bootstrap's "danger" red on hover */
-
-      transform: scale(1.05) translateX(5px);
-      /* Scales up and moves slightly to the right */
-    }
-
-    @media screen and (max-width: 768px) {
-
-      .HeadingDiv h5 {
-        display: flex;
-        justify-content: center;
       }
 
       .HeadingDiv {
-        width: 100%;
-        padding: 0px;
+        width: 70%;
+
       }
 
-      .HeadingDiv p {
-        width: 100%;
+      .FooterLogo img {
+        width: 7rem;
+        height: auto;
+      }
+
+      .HeadingDiv h5 {
+        font-weight: bold;
         color: #ff0019;
       }
 
-      .ContactNumber {
-        display: flex;
-        justify-content: center;
+      .text-white {
+        color: white !important;
       }
 
-      .ContactNumber small {
-        width: 100%;
+      .mb-10 {
+        margin-bottom: 7rem;
+        /* Adjust this value as needed */
       }
 
-      .FooterRowContent1 {
-        margin-bottom: 50px;
-        justify-content: center;
+      .LowerHeading {
+        width: 20rem;
       }
 
-      .FooterRow2Content1 h6 {
-        display: flex;
-        justify-content: center;
+      /* Anchor tag styling */
+      /* Base styles for links */
+      .row a {
+        text-decoration: none;
+        /* Removes underline */
+        color: #ffffff;
+        /* Ensures text is white by default */
+        transition: transform 0.3s ease, color 0.3s ease, text-decoration 0.3s ease;
+        /* Smooth transition for transform, color, and underline */
+        display: inline-block;
+        /* Allows transformation */
       }
 
-      .FooterRow2Content2 h6 {
-        display: flex;
-        justify-content: center;
+      /* Hover effect */
+      .row a:hover {
+        /* Changes color to Bootstrap's "danger" red on hover */
+
+        transform: scale(1.05) translateX(5px);
+        /* Scales up and moves slightly to the right */
       }
 
-      .FooterRow2Content3 h6 {
-        display: flex;
-        justify-content: center;
+      @media screen and (max-width: 768px) {
+
+        .HeadingDiv h5 {
+          display: flex;
+          justify-content: center;
+        }
+
+        .HeadingDiv {
+          width: 100%;
+          padding: 0px;
+        }
+
+        .HeadingDiv p {
+          width: 100%;
+          color: #ff0019;
+        }
+
+        .ContactNumber {
+          display: flex;
+          justify-content: center;
+        }
+
+        .ContactNumber small {
+          width: 100%;
+        }
+
+        .FooterRowContent1 {
+          margin-bottom: 50px;
+          justify-content: center;
+        }
+
+        .FooterRow2Content1 h6 {
+          display: flex;
+          justify-content: center;
+        }
+
+        .FooterRow2Content2 h6 {
+          display: flex;
+          justify-content: center;
+        }
+
+        .FooterRow2Content3 h6 {
+          display: flex;
+          justify-content: center;
+        }
+
+        .FooterRow2Content1 p {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .FooterRow2Content2 p {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+
+        .FooterRow2Content3 p {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .FooterRowContent2 {
+          margin-bottom: 50px;
+          justify-content: center;
+        }
+
+        .FooterRowContent3 {
+          margin-bottom: 50px;
+          justify-content: center;
+        }
+
+        .FooterRow1 {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .FooterLogo,
+        .HeadingDiv {
+          margin-bottom: 20px;
+        }
       }
-
-      .FooterRow2Content1 p {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .FooterRow2Content2 p {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-
-      .FooterRow2Content3 p {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .FooterRowContent2 {
-        margin-bottom: 50px;
-        justify-content: center;
-      }
-
-      .FooterRowContent3 {
-        margin-bottom: 50px;
-        justify-content: center;
-      }
-
-      .FooterRow1 {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 50px;
-      }
-
-      .FooterLogo,
-      .HeadingDiv {
-        margin-bottom: 20px;
-      }
-    }
-  </style>
+    </style>
 
 
 
 
 
-  <!-- Footer Ends Here -->
-  <!-- Footer -->
+    <!-- Footer Ends Here -->
+    <!-- Footer -->
 
 
 
@@ -1157,117 +1298,79 @@
 
 
 
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          // Select all images
-          const images = [
-            document.getElementById("page3image1"),
-            document.getElementById("page3image2"),
-            document.getElementById("page3image3"),
-          ];
 
-          // Refined Intersection Observer approach
-          const observerOptions = {
-            root: null, // use the viewport
-            rootMargin: "0px",
-            threshold: 0.5, // Trigger when 50% of the element is visible
-          };
 
-          const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-              // Only add active class when more than 50% of the image is in view
-              if (entry.intersectionRatio > 0.5) {
-                // Add a slight delay for a more natural reveal
-                setTimeout(() => {
-                  entry.target.classList.add("active");
-                }, 200);
-              } else {
-                entry.target.classList.remove("active");
-              }
-            });
-          }, observerOptions);
 
-          // Observe each image
-          images.forEach((image) => {
-            // Ensure initial state
-            image.classList.remove("active");
-            imageObserver.observe(image);
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+
+        // Smooth mouse tracking with interpolation
+        let currentX = 0;
+        let currentY = 0;
+        let targetX = currentX;
+        let targetY = currentY;
+
+        // Update cursor position smoothly
+        function updateCursor() {
+          currentX += (targetX - currentX) * 0.2;
+          currentY += (targetY - currentY) * 0.2;
+
+          cursor.style.left = `${currentX}px`;
+          cursor.style.top = `${currentY}px`;
+          requestAnimationFrame(updateCursor);
+        }
+
+        // Event listeners for mouse movement
+        document.addEventListener('mousemove', (e) => {
+          if (cursor.style.display === 'none') {
+            cursor.style.display = 'block'; // Show cursor on first movement
+          }
+          targetX = e.clientX;
+          targetY = e.clientY;
+        });
+
+        // Hide cursor when leaving the window
+        document.addEventListener('mouseout', (e) => {
+          if (e.relatedTarget === null) {
+            cursor.style.display = 'none';
+          }
+        });
+
+        // Show cursor when entering the window
+        document.addEventListener('mouseover', (e) => {
+          if (e.relatedTarget === null) {
+            cursor.style.display = 'block';
+          }
+        });
+
+        // Click effect
+        document.addEventListener('mousedown', () => {
+          cursor.classList.add('click');
+        });
+
+        document.addEventListener('mouseup', () => {
+          cursor.classList.remove('click');
+        });
+
+        // Interactive elements hover effect
+        const interactiveElements = document.querySelectorAll('.interactive, a, button');
+        interactiveElements.forEach((el) => {
+          el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+          });
+          el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
           });
         });
-      </script>
 
-
-
-
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-          const cursor = document.createElement('div');
-          cursor.classList.add('custom-cursor');
-          document.body.appendChild(cursor);
-
-          // Smooth mouse tracking with interpolation
-          let currentX = 0;
-          let currentY = 0;
-          let targetX = currentX;
-          let targetY = currentY;
-
-          // Update cursor position smoothly
-          function updateCursor() {
-            currentX += (targetX - currentX) * 0.2;
-            currentY += (targetY - currentY) * 0.2;
-
-            cursor.style.left = `${currentX}px`;
-            cursor.style.top = `${currentY}px`;
-            requestAnimationFrame(updateCursor);
-          }
-
-          // Event listeners for mouse movement
-          document.addEventListener('mousemove', (e) => {
-            if (cursor.style.display === 'none') {
-              cursor.style.display = 'block'; // Show cursor on first movement
-            }
-            targetX = e.clientX;
-            targetY = e.clientY;
-          });
-
-          // Hide cursor when leaving the window
-          document.addEventListener('mouseout', (e) => {
-            if (e.relatedTarget === null) {
-              cursor.style.display = 'none';
-            }
-          });
-
-          // Show cursor when entering the window
-          document.addEventListener('mouseover', (e) => {
-            if (e.relatedTarget === null) {
-              cursor.style.display = 'block';
-            }
-          });
-
-          // Click effect
-          document.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-          });
-
-          document.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
-          });
-
-          // Interactive elements hover effect
-          const interactiveElements = document.querySelectorAll('.interactive, a, button');
-          interactiveElements.forEach((el) => {
-            el.addEventListener('mouseenter', () => {
-              cursor.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-              cursor.classList.remove('hover');
-            });
-          });
-
-          // Start the smooth cursor tracking
-          updateCursor();
-        });
-      </script>
+        // Start the smooth cursor tracking
+        updateCursor();
+      });
+    </script>
 
 
 
@@ -1275,51 +1378,7 @@
 
 
 
-      <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          // Select all images
-          const images = [
-            document.getElementById("page3image1"),
-            document.getElementById("page3image2"),
-            document.getElementById("page3image3"),
-          ];
 
-          // Scroll reveal function
-          function checkScroll() {
-            images.forEach((image) => {
-              // Get image position
-              const rect = image.getBoundingClientRect();
-              const windowHeight = window.innerHeight;
-
-              // Check if image is in view
-              if (rect.top >= 0 && rect.bottom <= windowHeight) {
-                image.classList.add("active");
-              } else {
-                image.classList.remove("active");
-              }
-            });
-          }
-
-          // Debounce function to improve performance
-          function debounce(func, delay = 10) {
-            let timeoutId;
-            return function () {
-              const context = this;
-              const args = arguments;
-              clearTimeout(timeoutId);
-              timeoutId = setTimeout(() => {
-                func.apply(context, args);
-              }, delay);
-            };
-          }
-
-          // Add scroll event listener with debounce
-          window.addEventListener("scroll", debounce(checkScroll));
-
-          // Initial check
-          checkScroll();
-        });
-      </script>
 
 </body>
 
